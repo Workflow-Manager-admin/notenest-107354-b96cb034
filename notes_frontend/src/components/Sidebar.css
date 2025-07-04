@@ -1,0 +1,100 @@
+.sidebar {
+  min-width: 225px;
+  max-width: 300px;
+  width: 24vw;
+  background: var(--glass-bg);
+  border-right: 2px solid var(--glass-border);
+  height: calc(100vh - 70px);
+  position: relative;
+  padding: 0 0.3rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+.glassy-sidebar {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 4px 1px 30px var(--shadow-color);
+  border-radius: 0 21px 21px 0;
+  margin-right: 0.3rem;
+}
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4em 1.05em 0.8em 0.44em;
+  font-size: 1.13em;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 1.2px dotted var(--border-color);
+}
+.add-note-btn {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: 1.4px solid var(--button-hover);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1.25em;
+  padding: 2px 15px;
+  font-weight: 700;
+  box-shadow: 0 3px 8px var(--shadow-color);
+  margin-left: 0.7em;
+  outline: none;
+  transition: background 0.18s;
+}
+.add-note-btn:hover {
+  background: var(--button-hover);
+  color: var(--bg-primary);
+}
+.sidebar-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 0.4em;
+  padding-bottom: 0.44em;
+}
+.sidebar-list-item {
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  padding: 0.81em 0.7em 0.79em 1.1em;
+  border-radius: 15px;
+  font-size: 1.12em;
+  color: var(--text-primary);
+  margin: 0.2em 0;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition: background 0.22s, border 0.23s, color 0.2s;
+  box-shadow: 0 2px 9px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar-list-item.selected, .sidebar-list-item:hover {
+  background: var(--bg-secondary);
+  color: var(--accent);
+  border-left: 3px solid var(--accent);
+}
+.note-title {
+  font-weight: 600;
+  font-size: 1.06em;
+  margin-bottom: 3px;
+}
+.note-date {
+  font-size: 0.77em;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+.sidebar-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 2.7em 0;
+}
+@media (max-width: 900px) {
+  .sidebar { min-width: 175px; width: 35vw; font-size: 0.98em;}
+  .sidebar-list-item {font-size: 1.02em; padding: 0.4em;}
+}
+@media (max-width:680px) {
+  .sidebar {display:none;}
+}
